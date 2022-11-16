@@ -1,3 +1,7 @@
+import React from "react";
+import { Container } from "react-bootstrap";
+import { FooterMainStyle } from "./FooterMainStyle";
+
 function FooterMain() {
     return (
         <FooterMainStyle>
@@ -9,8 +13,8 @@ function FooterMain() {
       </div> */}
             <footer className='footer-main-wapper'>
                 <Container>
-                    <FooterTop />
-                    <FooterBottom />
+                    {/* <FooterTop />
+                    <FooterBottom /> */}
                 </Container>
             </footer>
         </FooterMainStyle>

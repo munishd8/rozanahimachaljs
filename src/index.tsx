@@ -3,20 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HeaderMain from './Components/common/Header/HeaderMain';
-import Home from './ Pages/Home/Home';
+import FooterMain from './Components/common/Footer/FooterMain';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
 root.render(
   <React.StrictMode>
-        <BrowserRouter>
-           <HeaderMain/>
-            <Routes>
-                <Route path="/" element={<Home/>} />
-                
-            </Routes>
-        </BrowserRouter>
+    <HeaderMain/>
+    <FooterMain/>
   </React.StrictMode>
 );
 
