@@ -1,20 +1,16 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import FooterBottom from "./FooterBottom/FooterBottom";
 import { FooterMainStyle } from "./FooterMainStyle";
+import FooterTop from "./FooterTop/FooterTop";
 
 function FooterMain() {
     return (
         <FooterMainStyle>
-
-            {/* <div className='footer-border-wapper'>
-        <Container>
-          <div className="footer-border"></div>
-        </Container>
-      </div> */}
             <footer className='footer-main-wapper'>
                 <Container>
-                    {/* <FooterTop />
-                    <FooterBottom /> */}
+                    <FooterTop />
+                    <FooterBottom />
                 </Container>
             </footer>
         </FooterMainStyle>

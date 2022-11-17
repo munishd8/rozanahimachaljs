@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
     Button,
     Container,
@@ -6,68 +7,62 @@ import {
     Navbar,
     NavDropdown,
     Offcanvas,
-    Image,
 } from 'react-bootstrap';
 import { HeaderNavStyle } from './HeaderNavStyle';
+import { Icon } from '@iconify/react';
 
 function HeaderNav() {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
         <HeaderNavStyle>
             <div className='header-nav-wapper'>
-                <Navbar bg="light" expand="lg" className="mb-3">
+                <Navbar expand="lg" className="">
                     <Container>
-                        <Navbar.Brand href="#" style={{width: '140px'} }>
-                            <Image
-                                src="https://rozanahimachal.com/uploads/logo/logo_630d1fc4eaa744-67986888-71324831.png"
-                                fluid
+                        <div className='offcanvas-wapper'>
+                            <Offcanvas show={show} onHide={handleClose}>
+                                <Offcanvas.Header closeButton>
+                                    <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                                </Offcanvas.Header>
+                                <Offcanvas.Body>
+                                    Some text as placeholder. In real life you can have the elements you
+                                    have chosen. Like, text, images, lists, etc.
+                                </Offcanvas.Body>
+                            </Offcanvas>
+                        </div>
+                        <Nav className="justify-content-start flex-grow-1 pe-3">
+                            <span onClick={handleShow} className="me-2">
+                                <Icon icon="gg:menu-grid-o" />
+                            </span>
+                            <Nav.Link href="#action1">होम</Nav.Link>
+                            <Nav.Link href="#action1">हिमाचल प्रदेश</Nav.Link>
+                            <Nav.Link href="#action2">देश</Nav.Link>
+                            <Nav.Link href="#action2">दुनिया</Nav.Link>
+                            <Nav.Link href="#action2">राजनीति</Nav.Link>
+                            <Nav.Link href="#action2">धर्म/ज्योतिष</Nav.Link>
+                            <Nav.Link href="#action2">राजनीति</Nav.Link>
+                            <Nav.Link href="#action2">धर्म/ज्योतिष</Nav.Link>
+                            <Nav.Link href="#action2">राजनीति</Nav.Link>
+                            <Nav.Link href="#action2">धर्म/ज्योतिष</Nav.Link>
+                            <Nav.Link href="#action2">राजनीति</Nav.Link>
+                            <Nav.Link href="#action2">धर्म/ज्योतिष</Nav.Link>
+                        </Nav>
+                        <div className='icon-wapper d-flex'>
+                            <div className='menu-icon'> <Icon icon="clarity:notification-solid-badged" /> </div>
+                            <span className='min-border'></span> 
+                            <div className='menu-icon'> <Icon icon="wpf:search" /> </div>
+                        </div>
+                        {/* <Form className="d-flex">
+                            <Form.Control
+                                type="search"
+                                placeholder="Search"
+                                className="me-2"
+                                aria-label="Search"
                             />
-                        </Navbar.Brand>
-                        <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
-                        <Navbar.Offcanvas
-                            id={`offcanvasNavbar-expand-lg`}
-                            aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
-                            placement="start"
-                        >
-                            <Offcanvas.Header closeButton>
-                                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}>
-                                    Offcanvas
-                                </Offcanvas.Title>
-                            </Offcanvas.Header>
-                            <Offcanvas.Body>
-                                <Nav className="justify-content-end flex-grow-1 pe-3">
-                                    <Nav.Link href="#action1">होम</Nav.Link>
-                                    <NavDropdown
-                                        title="हिमाचल प्रदेश"
-                                        id={`offcanvasNavbarDropdown-expand-lg`}
-                                    >
-                                        <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                                        <NavDropdown.Item href="#action4">
-                                            Another action
-                                        </NavDropdown.Item>
-                                        <NavDropdown.Divider />
-                                        <NavDropdown.Item href="#action5">
-                                            Something else here
-                                        </NavDropdown.Item>
-                                    </NavDropdown>
-                                    <Nav.Link href="#action2">देश</Nav.Link>
-                                    <Nav.Link href="#action2">दुनिया</Nav.Link>
-                                    <Nav.Link href="#action2">राजनीति</Nav.Link>
-                                    <Nav.Link href="#action2">धर्म/ज्योतिष</Nav.Link>
-                                    <Nav.Link href="#action2">खेल</Nav.Link>
-                                    <Nav.Link href="#action2">मनोरंजन</Nav.Link>
-                                    <Nav.Link href="#action2">नौकरियां</Nav.Link>
-                                </Nav>
-                                <Form className="d-flex">
-                                    <Form.Control
-                                        type="search"
-                                        placeholder="Search"
-                                        className="me-2"
-                                        aria-label="Search"
-                                    />
-                                    {/* <Button variant="outline-success">Search</Button> */}
-                                </Form>
-                            </Offcanvas.Body>
-                        </Navbar.Offcanvas>
+                            <Button variant="outline-success">Search</Button>
+                        </Form> */}
                     </Container>
                 </Navbar>
             </div>
